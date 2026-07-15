@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+/*----------------------------- scroll_button -----------------------------*/
+/****************************** all ******************************/
+.scroll_button[data-scroll-button-scroll-position="top"], 
+.scroll_button[data-scroll-button-scroll-position="bottom"]{
+	color:#fff;
+	line-height:1.2;
+	aspect-ratio:1;
+	border:none;
+	background:rgba(50, 50, 50, 0.7);
+	position:fixed;
+	right:0;
+	z-index:1;
+	display:none;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+}
+
+.scroll_button[data-scroll-button-scroll-position="top"]::before, 
+.scroll_button[data-scroll-button-scroll-position="bottom"]::after{
+	content:"";
+	aspect-ratio:1;
+	background:#fff;
+	display:block;
+}
+
+.scroll_button[data-scroll-button-scroll-position="top"]::before{
+	clip-path:polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.scroll_button[data-scroll-button-scroll-position="bottom"]::after{
+	clip-path:polygon(0 0, 100% 0, 50% 100%);
+}
+
+.scroll_button[data-scroll-button-scroll-position="top"] > span, 
+.scroll_button[data-scroll-button-scroll-position="bottom"] > span{
+	font-weight:bold;
+}
+/****************************** /all ******************************/
+
+/****************************** pc ******************************/
+@media screen and (min-width:1280px){
+	.scroll_button[data-scroll-button-scroll-position="top"], 
+	.scroll_button[data-scroll-button-scroll-position="bottom"]{
+		font-size:12px;
+		width:80px;
+		border-radius:10px;
+		-webkit-border-radius:10px;
+		-moz-border-radius:10px;
+	}
+	
+	.scroll_button[data-scroll-button-scroll-position="top"]::before, 
+	.scroll_button[data-scroll-button-scroll-position="bottom"]::after{
+		width:15px;
+	}
+	
+	.scroll_button[data-scroll-button-scroll-position="top"]::before{
+		margin-bottom:10px;
+	}
+	
+	.scroll_button[data-scroll-button-scroll-position="bottom"] > span{
+		margin-bottom:10px;
+	}
+}
+/****************************** /pc ******************************/
+
+/****************************** tablet ******************************/
+@media screen and (min-width:768px) and (max-width:1280px){
+	.scroll_button[data-scroll-button-scroll-position="top"], 
+	.scroll_button[data-scroll-button-scroll-position="bottom"]{
+		font-size:1.2vw;
+		width:8.0vw;
+		border-radius:1.0vw;
+		-webkit-border-radius:1.0vw;
+		-moz-border-radius:1.0vw;
+	}
+	
+	.scroll_button[data-scroll-button-scroll-position="top"]::before, 
+	.scroll_button[data-scroll-button-scroll-position="bottom"]::after{
+		width:1.5vw;
+	}
+	
+	.scroll_button[data-scroll-button-scroll-position="top"]::before{
+		margin-bottom:1.0vw;
+	}
+	
+	.scroll_button[data-scroll-button-scroll-position="bottom"] > span{
+		margin-bottom:1.0vw;
+	}
+}
+/****************************** /tablet ******************************/
+
+/****************************** sp ******************************/
+@media screen and (max-width:768px){
+	.scroll_button[data-scroll-button-scroll-position="top"], 
+	.scroll_button[data-scroll-button-scroll-position="bottom"]{
+		font-size:2.2vw;
+		width:14.0vw;
+		border-radius:2.0vw;
+		-webkit-border-radius:2.0vw;
+		-moz-border-radius:2.0vw;
+	}
+	
+	.scroll_button[data-scroll-button-scroll-position="top"]::before, 
+	.scroll_button[data-scroll-button-scroll-position="bottom"]::after{
+		width:3.0vw;
+	}
+	
+	.scroll_button[data-scroll-button-scroll-position="top"]::before{
+		margin-bottom:2.0vw;
+	}
+	
+	.scroll_button[data-scroll-button-scroll-position="bottom"] > span{
+		margin-bottom:2.0vw;
+	}
+}
+/****************************** /sp ******************************/
+/*----------------------------- /scroll_button -----------------------------*/

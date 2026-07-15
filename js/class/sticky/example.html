@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>class - 要素追従</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="./../../../css/default.css">
+<!-- class -->
+<link rel="stylesheet" href="./default.css">
+<style>
+.sticky{
+	background:#fff;
+}
+</style>
+</head>
+<body>
+	<div style="height:100px;">
+		上部コンテンツ
+	</div>
+	<div class="sticky">
+		固定コンテンツ
+	</div>
+	<div style="height:5000px;">
+		下部コンテンツ
+	</div>
+	<!-- class -->
+	<script src="./Sticky.js"></script>
+	
+	<script>
+document.addEventListener('DOMContentLoaded', () => {
+	const eleStickyList = document.querySelectorAll('.sticky');
+	eleStickyList.forEach((element) => {
+		new Sticky(
+			element, {
+				funcCallbackActive: () => {
+					console.log('active');
+				}, 
+				funcCallbackInactive: () => {
+					console.log('inactive');
+				} 
+			} 
+		);
+	});
+});
+	</script>
+</body>
+</html>

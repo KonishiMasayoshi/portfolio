@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+/*----------------------------- accordion_overflow -----------------------------*/
+/****************************** all ******************************/
+@-webkit-keyframes accordion_overflow_trigger_animate_show{
+	0%{
+		transform:scaleY(1) rotate(45deg) translate(6%, 6%);
+	}
+	100%{
+		transform:scaleY(-1) rotate(45deg) translate(-31%, -31%);
+	}
+}
+
+@keyframes accordion_overflow_trigger_animate_show{
+	0%{
+		transform:scaleY(1) rotate(45deg) translate(6%, 6%);
+	}
+	100%{
+		transform:scaleY(-1) rotate(45deg) translate(-31%, -31%);
+	}
+}
+
+@-webkit-keyframes accordion_overflow_trigger_animate_hide{
+	0%{
+		transform:scaleY(-1) rotate(45deg) translate(-31%, -31%);
+	}
+	100%{
+		transform:scaleY(1) rotate(45deg) translate(6%, 6%);
+	}
+}
+
+@keyframes accordion_overflow_trigger_animate_hide{
+	0%{
+		transform:scaleY(-1) rotate(45deg) translate(-31%, -31%);
+	}
+	100%{
+		transform:scaleY(1) rotate(45deg) translate(6%, 6%);
+	}
+}
+
+.accordion_overflow_item{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+}
+
+.accordion_overflow_wrapper{
+	width:100%;
+	overflow:hidden;
+	transition:max-height 0.5s ease;
+}
+
+.accordion_overflow_trigger_show::after{
+	animation-name:accordion_overflow_trigger_animate_show;
+	animation-duration:250ms;
+	animation-fill-mode:both;
+	animation-timing-function:ease-in-out;
+}
+
+.accordion_overflow_trigger_hide::after{
+	animation-name:accordion_overflow_trigger_animate_hide;
+	animation-duration:250ms;
+	animation-fill-mode:both;
+	animation-timing-function:ease-in-out;
+}
+
+.accordion_overflow_trigger{
+	line-height:1.2;
+	position:relative;
+	display:inline-block;
+	cursor:pointer;
+}
+
+.accordion_overflow_trigger::after{
+	content:"";
+	aspect-ratio:1;
+	border-bottom:solid #444 1px;
+	border-right:solid #444 1px;
+	position:absolute;
+	top:50%;
+	display:inline-block;
+	transform:scaleY(1) rotate(45deg) translate(6%, 6%);
+}
+/****************************** /all ******************************/
+
+/****************************** pc ******************************/
+@media screen and (min-width:1280px){
+	.accordion_overflow_item{
+		gap:10px;
+	}
+	
+	.accordion_overflow_trigger{
+		font-size:14px;
+		padding:5px 30px 5px 10px;
+	}
+
+	.accordion_overflow_trigger::after{
+		width:10px;
+		margin-top:-8px;
+		right:10px;
+	}
+}
+/****************************** /pc ******************************/
+
+/****************************** tablet ******************************/
+@media screen and (min-width:768px) and (max-width:1280px){
+	.accordion_overflow_item{
+		gap:1.0vw;
+	}
+	
+	.accordion_overflow_trigger{
+		font-size:1.4vw;
+		padding:0.5vw 3.0vw 0.5vw 1.0vw;
+	}
+
+	.accordion_overflow_trigger::after{
+		width:1.0vw;
+		margin-top:-0.8vw;
+		right:1.0vw;
+	}
+}
+/****************************** /tablet ******************************/
+
+/****************************** sp ******************************/
+@media screen and (max-width:768px){
+	.accordion_overflow_item{
+		gap:2.0vw;
+	}
+	
+	.accordion_overflow_trigger{
+		font-size:5.0vw;
+		padding:1.5vw 9.0vw 1.5vw 2.0vw;
+	}
+
+	.accordion_overflow_trigger::after{
+		width:3.6vw;
+		margin-top:-2.8vw;
+		right:2.0vw;
+	}
+}
+/****************************** /sp ******************************/
+/*----------------------------- /accordion_overflow -----------------------------*/
