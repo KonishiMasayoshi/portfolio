@@ -25,6 +25,7 @@ define(
 						"description" => <<<TEXT
 							こちらのポートフォリオでございます。<br>
 							カルーセルは表示領域外では停止するようにするなどパフォーマンスを意識しながら作成いたしました。<br>
+							CPU消費を最小に抑えメモリリークを起こさないようにしつつ、<br>
 							アクセシビリティやセマンティックの面で正しいコーディングも意識しております。
 TEXT
 						, 
@@ -325,6 +326,14 @@ h1.headline span:last-child::after{
 /*----------------------------- /history -----------------------------*/
 
 /*----------------------------- product -----------------------------*/
+#product_description_wrapper{
+	line-height:1.5;
+}
+
+#product_description_wrapper > p{
+	text-align:left;
+}
+
 #product_list{
 	counter-reset:number 0;
 }
@@ -682,6 +691,11 @@ h1.headline span:last-child::after{
 	/*----------------------------- /history -----------------------------*/
 	
 	/*----------------------------- product -----------------------------*/
+	#product_description_wrapper{
+		font-size:var(--font-size-medium);
+		margin-bottom:var(--margin-smaller);
+	}
+	
 	#product_list > li:not(:last-child){
 		margin-bottom:var(--margin-medium);
 	}
@@ -989,6 +1003,11 @@ h1.headline span:last-child::after{
 	/*----------------------------- /history -----------------------------*/
 	
 	/*----------------------------- product -----------------------------*/
+	#product_description_wrapper{
+		font-size:var(--font-size-medium);
+		margin-bottom:var(--margin-smaller);
+	}
+	
 	#product_list > li:not(:last-child){
 		margin-bottom:var(--margin-medium);
 	}
@@ -1309,6 +1328,11 @@ h1.headline span:last-child::after{
 	/*----------------------------- /history -----------------------------*/
 	
 	/*----------------------------- product -----------------------------*/
+	#product_description_wrapper{
+		font-size:var(--font-size-medium);
+		margin-bottom:var(--margin-smaller);
+	}
+	
 	#product_list > li:not(:last-child){
 		margin-bottom:var(--margin-medium);
 	}
@@ -1592,6 +1616,9 @@ h1.headline span:last-child::after{
 			<h2 class="headline" id="product_headline">
 				<div>Product</div>
 			</h2>
+			<div id="product_description_wrapper">
+				<p>過去に作成させて頂きました作成物の一部を記載させて頂きます。</p>
+			</div>
 			<ol id="product_list">
 				<li>
 					<h3 class="headline"><span>制作事例</span></h3>
