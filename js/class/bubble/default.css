@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/*----------------------------- bubble -----------------------------*/
+.bubble{
+	position: fixed;
+	bottom: -100px;
+	animation-name: bubble-float-y, bubble-fade;
+	will-change: transform, opacity;
+	animation-timing-function: ease-out, linear;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+.bubble_child{
+	width: 100%;
+	aspect-ratio: 1;
+	background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 191, 255, 0.3) 40%, rgba(0, 0, 128, 0.1) 100%);
+	border-radius: 50%;
+	box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.2);
+	animation-name: bubble-float-x;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes bubble-float-y {
+	to {
+		transform: translateY(calc(-100vh - 100px));
+	}
+}
+
+@keyframes bubble-float-x {
+	from {
+		transform: translateX(-70px);
+	}
+	to {
+		transform: translateX(70px);
+	}
+}
+
+@keyframes bubble-fade {
+	0%, 
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+/*----------------------------- /bubble -----------------------------*/

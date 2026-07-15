@@ -75,6 +75,17 @@ TEXT
 TEXT
 						, 
 						"url" => CONST_GITHUB_URL. "calendar" 
+					], 
+					[
+						"name" => "Bubble", 
+						"description" => <<<TEXT
+							シャボン玉表示用クラスファイルです。<br>
+							ランダムにふわふわと浮かんでいるような動きをします。<br>
+							CSSのアニメーションを変更すると他の動きも可能です。<br>
+							常に動かしているので可能な限り軽量化を図っております。
+TEXT
+						, 
+						"url" => CONST_GITHUB_URL. "bubble" 
 					] 
 				] 
 			] 
@@ -104,6 +115,7 @@ TEXT
 <!-- class -->
 <link rel="preload" href="./js/class/sticky/default.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="./js/class/scroll_button/default.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="./js/class/bubble/default.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <!-- library -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript>
@@ -112,6 +124,7 @@ TEXT
 	<!-- class -->
 	<link rel="stylesheet" href="./js/class/sticky/default.css">
 	<link rel="stylesheet" href="./js/class/scroll_button/default.css">
+	<link rel="stylesheet" href="./js/class/bubble/default.css">
 	<!-- library -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 </noscript>
@@ -125,6 +138,7 @@ TEXT
 	/* カラー */
 	--color-primary:#77f;
 	--color-primary-light:rgba(119,119,255,0.3);
+	--color-primary-extra-light:#eef;
 	--color-text-black:#333;
 	--color-text-gray:#666;
 	--color-white:#fff;
@@ -194,6 +208,17 @@ h3.headline::after{
 	vertical-align:middle;
 }
 /*----------------------------- /common -----------------------------*/
+
+/*----------------------------- class -----------------------------*/
+.bubble{
+	z-index:-1;
+}
+
+.bubble_child{
+	background:var(--color-primary-extra-light);
+	box-shadow:unset;
+}
+/*----------------------------- /class -----------------------------*/
 
 /*----------------------------- noscript -----------------------------*/
 noscript p{
@@ -1877,6 +1902,7 @@ CODE;
 	<script src="./js/class/scroll_button/ScrollButton.js"></script>
 	<script src="./js/class/view_trigger/ViewTrigger.js"></script>
 	<script src="./js/class/sticky/Sticky.js"></script>
+	<script src="./js/class/bubble/Bubble.js"></script>
 	<!-- library -->
 	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 	<script>
@@ -1895,7 +1921,8 @@ document.addEventListener('DOMContentLoaded', () => {
 					} 
 				} 
 			}, 
-			sticky:{} 
+			sticky:{}, 
+			bubble:{} 
 		} 
 	}, 
 	funcAddClass = () => {
@@ -1911,6 +1938,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				configs.plugin.sticky 
 			);
 		});
+		new Bubble(document.body);
 	};
 	funcAddClass();
 });
