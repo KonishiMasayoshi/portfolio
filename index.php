@@ -1730,9 +1730,9 @@ h1.headline span:last-child::after{
 							<tr>
 								<td colspan="2">
 									<p class="product_comment">
-										システム移行に伴い合計140ページ始めから作らせて頂きました。<br>
+										システム移行に伴い合計80ページをフルスクラッチにて作らせて頂きました。<br>
 										全てのページのSEOやパフォーマンスを最適化しつつ動線設計も意識しながら進めさせて頂いておりました。<br>
-										商品検索ページはPHPにて機能からスクラッチにて作成させて頂いております。
+										表示スピードはネットワーク環境にもよりますが0.3～0.5秒程で表示が完了致します。
 									</p>
 								</td>
 							</tr>
@@ -1826,6 +1826,99 @@ h1.headline span:last-child::after{
 									<p class="product_comment">
 										初めにご要望等お伺いしSEOを重視し作成致しました。<br>
 										お問い合わせフォームも作成しドロップ＆ドラッグでファイルを添付できるようにしております。
+									</p>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</li>
+				<li>
+					<h3 class="headline"><span>制作事例</span></h3>
+					<div class="product_wrapper">
+						<div class="product_carousel splide">
+							<div class="splide__track">
+								<ul class="splide__list">
+									<li class="splide__slide">
+										<figure>
+											<picture>
+												<source type="image/webp" srcset="./img/product/2/0.webp">
+												<img src="./img/product/2/0.jpg" alt="" width="987" height="888" loading="lazy" decoding="async">
+											</picture>
+											<figcaption>PCファーストビュー</figcaption>
+										</figure>
+									</li>
+									<li class="splide__slide">
+										<figure>
+											<picture>
+												<source type="image/webp" srcset="./img/product/2/1.webp">
+												<img src="./img/product/2/1.jpg" alt="" width="987" height="888" loading="lazy" decoding="async">
+											</picture>
+											<figcaption>スマホファーストビュー</figcaption>
+										</figure>
+									</li>
+									<li class="splide__slide">
+										<figure>
+											<picture>
+												<source type="image/webp" srcset="./img/product/2/2.webp">
+												<img src="./img/product/2/2.jpg" alt="" width="987" height="888" loading="lazy" decoding="async">
+											</picture>
+											<figcaption>スマホ検索メニュー</figcaption>
+										</figure>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<table cellpadding="4" cellspacing="0" border="0" class="product_table">
+							<tr>
+								<th class="product_item_name">
+									<h4>サイト名</h4>
+								</th>
+								<td>
+									こだわり検索
+								</td>
+							</tr>
+							<tr>
+								<th class="product_item_name">
+									<h4>URL</h4>
+								</th>
+								<td>
+									<a href="https://www.ala-mode.jp/search/" target="_blank" rel="noopener noreferrer" aria-label="ページを開く">
+										https://www.ala-mode.jp/search/
+									</a>
+									<p class="product_attention">
+										※リンク切れの場合がございますがご了承ください。
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th class="product_item_name">
+									<h4>担当</h4>
+								</th>
+								<td>
+									コーディング
+								</td>
+							</tr>
+							<tr>
+								<th class="product_item_name">
+									<h4>使用言語<br>フレームワーク</h4>
+								</th>
+								<td>
+									HTML, CSS, JavaScript, PHP
+								</td>
+							</tr>
+							<tr>
+								<th class="product_item_name">
+									<h4>期間</h4>
+								</th>
+								<td>
+									約20日
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<p class="product_comment">
+										機能改善の為に作成させて頂きました。<br>
+										ユーザービリティを考慮し様々な条件で商品検索を行えるように致しました。
 									</p>
 								</td>
 							</tr>
