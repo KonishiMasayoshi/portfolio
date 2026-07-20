@@ -1713,7 +1713,7 @@ h1.headline span:last-child::after{
 							</tr>
 							<tr>
 								<th class="product_item_name">
-									<h4>使用言語<br>フレームワーク</h4>
+									<h4>使用言語</h4>
 								</th>
 								<td>
 									HTML, CSS, JavaScript, PHP
@@ -1807,7 +1807,7 @@ h1.headline span:last-child::after{
 							</tr>
 							<tr>
 								<th class="product_item_name">
-									<h4>使用言語<br>フレームワーク</h4>
+									<h4>使用言語</h4>
 								</th>
 								<td>
 									HTML, CSS, JavaScript, PHP
@@ -1900,7 +1900,7 @@ h1.headline span:last-child::after{
 							</tr>
 							<tr>
 								<th class="product_item_name">
-									<h4>使用言語<br>フレームワーク</h4>
+									<h4>使用言語</h4>
 								</th>
 								<td>
 									HTML, CSS, JavaScript, PHP
