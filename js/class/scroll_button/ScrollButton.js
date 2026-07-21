@@ -4,7 +4,7 @@ class ScrollButton {
 	static instances = new Set();
 	static defaults = {
 		speedDisplaySwitch: 300, 
-		displayPosition: 10, 
+		displayPosition: 300, 
 		speedScroll: 600, 
 		timeScroll: 100, 
 		limitAdjustment: 5, 
@@ -58,7 +58,11 @@ class ScrollButton {
 			case attrPosition === 'bottom':
 				return scrollTop + winHeight <= docHeight - this.configs.displayPosition;
 			case !!attrPosition.match(this.constructor.patternUnsignedInt):
-				const scrollPosition = parseInt(attrPosition, 10);
+				const 
+				scrollPosition = parseInt(
+					attrPosition, 
+					10 
+				);
 				return (
 					(scrollTop + winHeight <= scrollPosition - this.configs.displayPosition) || 
 					(scrollTop >= scrollPosition + this.configs.displayPosition)
@@ -118,7 +122,6 @@ class ScrollButton {
 	
 	funcGetScrollPosition = () => {
 		const 
-		docHeight = document.documentElement.scrollHeight, 
 		attrPosition = this.el.getAttribute('data-scroll-button-scroll-position'), 
 		attrPermission = this.el.getAttribute('data-scroll-button-permission');
 		if (
@@ -126,19 +129,23 @@ class ScrollButton {
 			attrPermission === 'false' 
 		)
 		return false;
+		const 
+		maxScroll = Math.max(
+			0, 
+			document.documentElement.scrollHeight - window.innerHeight 
+		);
 		switch (true) {
 			case attrPosition === 'top':
 				return 0;
 			case attrPosition === 'bottom':
-				return Math.max(
-					0, 
-					docHeight - window.innerHeight 
-				);
+				return maxScroll;
 			case !!attrPosition.match(this.constructor.patternUnsignedInt):
-				return parseInt(
+				var 
+				scrollPosition = parseInt(
 					attrPosition, 
 					10 
 				);
+				return scrollPosition > maxScroll?maxScroll:scrollPosition;
 			default:
 				const 
 				targetEl = document.querySelector(attrPosition);
@@ -146,7 +153,9 @@ class ScrollButton {
 				return false;
 				const 
 				scrollTop = window.scrollY || document.documentElement.scrollTop;
-				return targetEl.getBoundingClientRect().top + scrollTop;
+				var 
+				scrollPosition = targetEl.getBoundingClientRect().top + scrollTop;
+				return scrollPosition > maxScroll?maxScroll:scrollPosition;
 		}
 	}
 	
@@ -230,9 +239,20 @@ class ScrollButton {
 			'click', 
 			(event) => {
 				event.preventDefault();
-				this.configs.funcCallbackExecuteStart(this.el, () => {
-					this.funcExecuteScroll(0);
-				});
+				const 
+				attrPosition = this.el.getAttribute('data-scroll-button-scroll-position'), 
+				targetEl = document.querySelector(attrPosition);
+				history.pushState(
+					null, 
+					null, 
+					targetEl?attrPosition:window.location.pathname + window.location.search 
+				);
+				this.configs.funcCallbackExecuteStart(
+					this.el, 
+					() => {
+						this.funcExecuteScroll(0);
+					} 
+				);
 			} 
 		);
 		if (
