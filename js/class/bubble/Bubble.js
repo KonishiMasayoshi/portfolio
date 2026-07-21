@@ -3,6 +3,7 @@
 class Bubble {
 	static defaults = {
 		createInterval: 1000, 
+		limitBubble: 20, 
 		className: {
 			parent: 'bubble', 
 			child: 'bubble_child' 
@@ -53,6 +54,8 @@ class Bubble {
 	}
 	
 	funcCreateBubble() {
+		if(document.querySelectorAll(`.${this.configs.className.parent}`).length >= this.configs.limitBubble)
+		return;
 		const 
 		parent = document.createElement('div'), 
 		child = document.createElement('div'), 
@@ -87,9 +90,6 @@ class Bubble {
 					parent.parentNode 
 				)
 				parent.remove();
-			}, 
-			{
-				once: true 
 			} 
 		);
 	}
